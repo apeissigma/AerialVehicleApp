@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="AerialVehicleApp.Models.AirCrafts.AerialVehicle">
+    <Position X="0.5" Y="6.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AACAAIAAAIAAAAEAgAAIAAQAAAAAAEAABAAAQAAIAAA=</HashCode>
+      <FileName>Models\AirCrafts\AerialVehicle.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AerialVehicleApp.Models.AirCrafts.Airplane">
+    <Position X="3" Y="9.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\AirCrafts\Airplane.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AerialVehicleApp.Models.AirCrafts.Drone">
+    <Position X="3" Y="6.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAABAAAAAAIAAAAAAAAAQAAAAAAAIAEA=</HashCode>
+      <FileName>Models\AirCrafts\Drone.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AerialVehicleApp.Models.AirCrafts.Helicopter">
+    <Position X="5.5" Y="6.25" Width="2.25" />
+    <InheritanceLine Type="AerialVehicleApp.Models.AirCrafts.AerialVehicle" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.625" Y="6.25" />
+        <Point X="1.625" Y="5.875" />
+        <Point X="6.688" Y="5.875" />
+        <Point X="6.688" Y="6.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Models\AirCrafts\Helicopter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AerialVehicleApp.Models.AirCrafts.ToyPlane">
+    <Position X="5.5" Y="9.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\AirCrafts\ToyPlane.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AerialVehicleApp.Models.Engines.Engine">
+    <Position X="0.5" Y="12" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAEAAAAAAAAAAABAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Models\Engines\Engine.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AerialVehicleApp.Models.Engines.JetEngine" Collapsed="true">
+    <Position X="3" Y="14.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Engines\JetEngine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AerialVehicleApp.Models.Engines.ReciprocatingEngine" Collapsed="true">
+    <Position X="3" Y="15.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Engines\ReciprocatingEngine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AerialVehicleApp.Models.Engines.RubberBandEngine">
+    <Position X="3" Y="12" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAACAAAAAAAAAAAAAAAAAAAACAEAAAAAAA=</HashCode>
+      <FileName>Models\Engines\RubberBandEngine.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AerialVehicleApp.Models.Engines.UAVEngine">
+    <Position X="3" Y="16.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Engines\UAVEngine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="AerialVehicleApp.Models.IAboutable">
+    <Position X="0.5" Y="0.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\IAboutable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AerialVehicleApp.Models.IFlyable">
+    <Position X="5.5" Y="0.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AACAAIAAAIAAAAAAgAAIAAAAAAAAAEAAAAAAQAAIAAA=</HashCode>
+      <FileName>Models\IFlyable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AerialVehicleApp.Models.IEngine">
+    <Position X="3" Y="0.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAABAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Models\IEngine.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AerialVehicleApp.Models.IHoverable">
+    <Position X="0.5" Y="3.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Models\IHoverable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AerialVehicleApp.Models.IRemoteControllable">
+    <Position X="3" Y="3.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAIAAAAAAAAAQAAAAAAAAAEA=</HashCode>
+      <FileName>Models\IRemoteControllable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AerialVehicleApp.Models.IWindable">
+    <Position X="5.5" Y="3.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAACAEAAAAAAA=</HashCode>
+      <FileName>Models\IWindable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
