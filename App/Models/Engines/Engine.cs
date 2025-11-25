@@ -7,21 +7,14 @@ using System.Threading.Tasks;
 
 namespace AerialVehicleApp.Models.Engines
 {
-    public class Engine : IEngine, IAboutable
+    public abstract class Engine : IEngine
     {
         //from IEngine
         public bool IsStarted { get; set; }
 
-        //constructor injection
         public Engine()
         {
-            IsStarted = false; 
-        }
-
-        //from IAboutable
-        public void About()
-        {
-
+            this.IsStarted = false;
         }
 
         //from IEngine
@@ -29,12 +22,12 @@ namespace AerialVehicleApp.Models.Engines
         {
             if (IsStarted)
             {
-                Console.WriteLine(" > The engine is already running!"); 
+                Console.WriteLine($" > The {this} is already running!"); 
             }
             else
             {
                 IsStarted = true;
-                Console.WriteLine(" > The engine started.");
+                Console.WriteLine($" > The {this} started.");
             }
         }
 

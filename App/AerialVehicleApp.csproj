@@ -11,4 +11,8 @@
     <Folder Include="Models\Vehicles\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Ninject" Version="3.3.6" />
+  </ItemGroup>
+
 </Project>

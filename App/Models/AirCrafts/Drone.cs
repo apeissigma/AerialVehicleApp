@@ -13,10 +13,9 @@ namespace AerialVehicleApp.Models.AirCrafts
         public bool IsConnected { get; set; }
         public bool ControllerIsOn { get; set; }
 
-
-        public Drone()
+        public Drone(IEngine engine)
         {
-            this.Name = "Drone";
+            //this.Name = "Drone";
             this.CurrentAltitude = 0;
             this.MaxAltitude = 400;
             this.IsFlying = false;
@@ -25,21 +24,25 @@ namespace AerialVehicleApp.Models.AirCrafts
             this.IsConnected = false;
             this.ControllerIsOn = false;
 
-            //implement UAV engine
-            this.Engine = new UAVEngine();
+            //implement 
+            this.Engine = engine;
         }
 
+        public Drone() : this(new UAVEngine())
+        {
 
-        public string TakeOff()
+        }
+
+        public void TakeOff()
         {
             if (Engine.IsStarted && IsConnected && ControllerIsOn)
             {
                 IsFlying = true;
-                return $" > The {Name} is flying";
+                Console.WriteLine($" > The {this} is flying");
             }
             else
             {
-                return $" > The {Name} isn't ready to fly yet!";
+                Console.WriteLine($" > The {this} isn't ready to fly yet!");
             }
         }
 
@@ -47,7 +50,7 @@ namespace AerialVehicleApp.Models.AirCrafts
         {
             if (IsFlying)
             {
-                Console.WriteLine($" > Cannot turn off the engine when the {Name} is in the air!");
+                Console.WriteLine($" > Cannot turn off the engine when the {this} is in the air!");
             }
             else
             {
@@ -60,13 +63,13 @@ namespace AerialVehicleApp.Models.AirCrafts
         public void Connect() 
         {
             if (!IsConnected) this.IsConnected = true;
-            else Console.WriteLine($"The {this.Name} is already connected");
+            else Console.WriteLine($"The {this} is already connected");
         }
 
         public void TurnOnController() 
         { 
             if(!ControllerIsOn) this.ControllerIsOn = true;
-            else Console.WriteLine($"The {this.Name}'s controller is already on.");
+            else Console.WriteLine($"The {this}'s controller is already on.");
         }
     }
 }

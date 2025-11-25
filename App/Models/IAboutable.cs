@@ -8,6 +8,6 @@ namespace AerialVehicleApp.Models
 {
     public interface IAboutable
     {
-        public void About() { }
+        public string About() => "";
     }
 }

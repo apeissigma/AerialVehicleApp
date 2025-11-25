@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AerialVehicleApp.Models
+namespace AerialVehicleApp.Models.Engines
 {
-    public interface ILethalable
+    public class UAVEngine : Engine
     {
-        public int InnocentsMurdered {  get; set; }
-
     }
 }

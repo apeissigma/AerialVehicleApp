@@ -31,13 +31,13 @@ namespace AerialVehicleApp
             WriteLine("\nAireplaneTakeOffTests.................................");
             WriteLine("\nCall ap.TakeOff():");
             //Test take off should fail engine isn't started
-            WriteLine(ap.TakeOff());  //Don't take off engine isn't started
+            ap.TakeOff();  //Don't take off engine isn't started
             /* Output:
              * OOPFlyingVehicleMidterm.Airplane can't fly it's engine is not started.
              */
             WriteLine("\nCall ap.StartEngine():");
             ap.StartEngine();
-            WriteLine(ap.TakeOff());  //take off engine is started
+            ap.TakeOff();  //take off engine is started
             /* Output:
              * OOPFlyingVehicleMidterm.Airplane is flying
              */

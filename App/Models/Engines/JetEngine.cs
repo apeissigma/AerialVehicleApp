@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace AerialVehicleApp.Models.Engines
 {
-    public class UAVEngine : Engine
+    public class JetEngine : Engine
     {
-        //TODO: write uav engine specific functionality 
-        //how does a uav engine work?
     }
 }

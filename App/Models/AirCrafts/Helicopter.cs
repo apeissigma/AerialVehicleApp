@@ -10,11 +10,12 @@ namespace AerialVehicleApp.Models.AirCrafts
     public class Helicopter : AerialVehicle, IHoverable
     {
         //implement IHoverable
-        public bool IsHovering { get; set; } 
+        public bool IsHovering { get; set; }
 
-        public Helicopter()
+
+        public Helicopter(IEngine engine)
         {
-            this.Name = "Helicopter";
+            //this.Name = "Plane";
             this.CurrentAltitude = 0;
             this.MaxAltitude = 10000;
             this.IsFlying = false;
@@ -22,18 +23,24 @@ namespace AerialVehicleApp.Models.AirCrafts
             //IHoverable
             this.IsHovering = false;
 
-            //implement reciprocating engine
-            this.Engine = new ReciprocatingEngine();
+            //implement 
+            this.Engine = engine;
         }
+
+        public Helicopter() : this(new ReciprocatingEngine())
+        {
+
+        }
+
 
         public void Hover()
         {
             if (IsFlying)
             {
                 IsHovering = true;
-                Console.WriteLine($"The {Name} is hovering.");
+                Console.WriteLine($"The {this} is hovering.");
             }
-            else Console.WriteLine($"The {Name} can't hover if it's not in the air!");
+            else Console.WriteLine($"The {this} can't hover if it's not in the air!");
         }
     }
 }

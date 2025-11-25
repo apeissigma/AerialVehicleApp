@@ -10,50 +10,58 @@ using static System.Console;
 
 namespace AerialVehicleApp.Models.AirCrafts
 {
-    public abstract class AerialVehicle : IFlyable, IAboutable
+    public abstract class AerialVehicle : IFlyable
     {
-        protected string Name { get; set; }
-        protected IEngine Engine;
+        //protected string Name { get; set; }
+       
 
         //from IFlyable
+        public IEngine Engine { get; set; }
         public int CurrentAltitude { get; set; }
         public int MaxAltitude { get; set; }
         public bool IsFlying { get; set; }
 
-        public AerialVehicle() { }
+        public AerialVehicle()
+        {
+            this.Engine = new JetEngine(); 
+        }
+        public AerialVehicle(IEngine engine)
+        {
+            this.Engine = engine; 
+        }
 
-        //from IAboutable
+
         public string About()
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.Append($" > This {Name} has a max altitude of {MaxAltitude} ft. \n");
+            sb.Append($"\n========== {this} Information ==========\n");
+
+            sb.Append($" > This {this} has a max altitude of {MaxAltitude} ft. \n");
             sb.Append($" > It's current altitude is {CurrentAltitude} ft. \n");
 
             //if engine is not started
             if (!Engine.IsStarted)
             {
-                sb.Append($" > The {Name}'s engine is not started.");
+                sb.Append($" > The {this}'s engine is not started.");
             }
             else
             {
-                sb.Append($" > The {Name}'s engine is running.");
+                sb.Append($" > The {this}'s engine is running.");
             }
 
             return sb.ToString();
         }
 
-
-        //from IFlyable
         public void FlyUp()
         {
             if (!Engine.IsStarted || !IsFlying)
             {
-                WriteLine($" > The {Name} is not running yet!");
+                WriteLine($" > The {this} is not running yet!");
             }
             else if (CurrentAltitude > MaxAltitude - 1000)
             {
-                WriteLine($" > The {Name} cannot fly this high!");
+                WriteLine($" > The {this} cannot fly this high!");
             }
             else
             {
@@ -65,11 +73,11 @@ namespace AerialVehicleApp.Models.AirCrafts
         {
             if (!Engine.IsStarted || !IsFlying)
             {
-                WriteLine($" > The {Name} is not running yet!");
+                WriteLine($" > The {this} is not running yet!");
             }
             else if (CurrentAltitude > MaxAltitude - altitude)
             {
-                WriteLine($" > The {Name} cannot fly this high!");
+                WriteLine($" > The {this} cannot fly this high!");
             }
             else
             {
@@ -81,7 +89,7 @@ namespace AerialVehicleApp.Models.AirCrafts
         {
             if (!Engine.IsStarted || !IsFlying)
             {
-                WriteLine($" > The {Name} is not running yet!");
+                WriteLine($" > The {this} is not running yet!");
             }
             else if (CurrentAltitude < 1000)
             {
@@ -97,7 +105,7 @@ namespace AerialVehicleApp.Models.AirCrafts
         {
             if (!Engine.IsStarted || !IsFlying)
             {
-                WriteLine($" > The {Name} is not running yet!");
+                WriteLine($" > The {this} is not running yet!");
             }
             else if (CurrentAltitude < altitude)
             {
@@ -105,7 +113,7 @@ namespace AerialVehicleApp.Models.AirCrafts
             }
             else if (CurrentAltitude == altitude) //land
             {
-                WriteLine($" > The {Name} has landed!");
+                WriteLine($" > The {this} has landed!");
                 CurrentAltitude -= altitude;
                 IsFlying = false;
                 Engine.IsStarted = false;
@@ -116,17 +124,17 @@ namespace AerialVehicleApp.Models.AirCrafts
             }
         }
    
-        public string TakeOff()
+        public void TakeOff()
         {
             //Test take off should fail engine isn't started
             if (Engine.IsStarted)
             {
-                IsFlying = true; 
-                return $" > The {Name} is flying";
+                IsFlying = true;
+                Console.WriteLine($" > The {this} is flying");
             }
             else
             {
-                return $" > The {Name} can't fly, it's engine is not started!";
+                Console.WriteLine($" > The {this} can't fly, it's engine is not started!");
             }
         }
 
@@ -139,7 +147,7 @@ namespace AerialVehicleApp.Models.AirCrafts
         {
             if (IsFlying)
             {
-                WriteLine($" > Cannot turn off the engine when the {Name} is in the air!");
+                WriteLine($" > Cannot turn off the engine when the {this} is in the air!");
             }
             else
             {

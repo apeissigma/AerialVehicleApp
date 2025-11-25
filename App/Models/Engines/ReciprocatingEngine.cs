@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace AerialVehicleApp.Models.Engines
 {
-    public class JetEngine : Engine
+    public class ReciprocatingEngine : Engine
     {
-        //TODO: write jet engine specific functionality 
-        //how does a jet engine work?
     }
 }
